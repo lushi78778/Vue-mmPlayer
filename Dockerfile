@@ -2,10 +2,10 @@
 FROM node:18 AS builder
 WORKDIR /app
 COPY . .
-RUN pnpm install
-# RUN pnpm run prepare
-# RUN pnpm run lint
-RUN pnpm run build
+RUN npm install
+RUN npm run prepare
+RUN npm run lint
+RUN npm run build
 
 # 最小化镜像
 FROM node:18-alpine
